@@ -1,14 +1,18 @@
-const express = require('express')
-const app = express()
+const Server = require('./server')
 
-app.get('/', (req, res) => {
-  res.send('Hello World !')
-})
+const port = 5000
 
-app.get('/product', (req, res) => {
-  res.send('Product Page')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello World !')
+// })
 
-app.listen(3000, () => {
-  console.log('App listening on port 3000!')
-})
+// app.get('/product', (req, res) => {
+//   res.send('Product Page')
+// })
+
+const app = new Server(port)
+app.start()
+
+// app.listen(3000, () => {
+//   console.log('App listening on port 3000!')
+// })
